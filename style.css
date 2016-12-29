@@ -8,14 +8,15 @@ body {
 }
 
 #parent {
-    display: flex;
+    display: flex-inline;
     width: 100%;
     height: auto;
 }
 
 .wrapper, .wrapper2 {
     border: 1px solid #2c3e50;
-    j
+    justify-content: center;
+    display: flex;
 }
 
 
@@ -27,6 +28,11 @@ h1 {
     line-height: 50px;
 }
 
+
+.green, .blue, .yellow, .purple, .red, .navy {
+    align-items: flex-end;
+    justify-content: space-between;
+}
 
 
 .green {
