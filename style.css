@@ -8,30 +8,38 @@ body {
 }
 
 #parent {
-    display: flex-inline;
-    width: 100%;
+    display: flex;
+    width: 100vw;
     height: auto;
 }
 
-.wrapper, .wrapper2 {
+.wrapper {
     border: 1px solid #2c3e50;
-    justify-content: center;
+    justify-content: space-between;
     display: flex;
 }
 
+.wrapper2 {
+    border: 1px solid red;
+    justify-content: space-between;
+    display: flex;
+}
 
+.text {
+    display: flex;
+}
 
 h1 {
     margin: auto;
     padding: 20px;
-    vertical-align: middle;
     line-height: 50px;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .green, .blue, .yellow, .purple, .red, .navy {
-    align-items: flex-end;
-    justify-content: space-between;
+    flex-flow: row-reverse wrap;
 }
 
 
