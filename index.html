@@ -1,112 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Exercises</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+
+  <title>Web Exercises</title>
 </head>
 <body>
-    <div class="text">
-        <h1>Flexbox Layout Modules</h1>
-    </div>
-    <!--     <div id="parent"> -->
-    <div class="wrapper">
-        <div class="green"></div>
-        <div class="blue"></div>
-        <div class="yellow"></div>
-    </div>
-    <div class="wrapper2">
-        <div class="purple"></div>
-        <div class="red"></div>
-        <div class="navy"></div>
-    </div>
-    <!--     </div> -->
-    <br /><br />
-    <div class="js-goldenrule" align="center">
-        <h3>Write JavaScript that is friendly to all browsers 
-            especially those which don't understand JavaScript!</h3>
-        </div>
-        <br /><br /><br /><br /><br />
-        <div class="useless-form" align="center">
-            <FORM name='myform'> 
-              <h3>What is your name?</h3>
-              <input type="text" name="yourName" size="30"><br />
-              <input type="reset" onClick='GoThere(myform.yourName)'
-              value="Visit the next page">
-          </FORM> 
-      </div>
+
+
+
+<h2>Messing around with <a href="#">jQuery</a></h2>
 
 
 
 
 
-<!-- SCRIPTS -->
-<script language='JavaScript'>
-    <!-- 
-    alert ("Welcome to my silly page where I practice different web dev techniques and all that!"); 
-   //-->
-</script>
-
-<script language='JavaScript'> 
-    <!--  
-    var whoami=navigator.userAgent.toLowerCase();  //use lower case name 
-    var my_version = parseInt(navigator.appVersion); //get version 
-    var is_ie = (whoami.indexOf("msie") != -1); //does name contain     'msie'? 
-    var is_ie3 = (is_ie && (my_version < 6)); //is it version 6? 
-    
-    if ( is_ie3 )
-        { alert ("Aargh! You're using Internet Explorer 6 !"); 
-        } else  
-                { alert ("Good! Your Browser appears JavaScript-competent!"); }; 
-    //--> 
-</script> 
-
-<script language='JavaScript'> 
-    <!-- 
-    function GoThere(yourname) 
-    { 
-        location="index2.html" + "#" + yourname.value;
-        whoyou = yourname.value; 
-        posn = whoyou.indexOf(" "); 
-        while ( posn > -1) 
-        { whoyou = whoyou.substring(0,posn) + "_" + whoyou.substring(1+posn); 
-           posn = whoyou.indexOf(" "); 
-       }; 
-   } 
-   //--> 
-</script>
-<script language='JavaScript'>
- function Replace ( target, todo, withwhat) 
-  { var fixme = target;                // load string to alter (into fixme) 
-    var atpos = fixme.indexOf(todo);   // find position of string to replace 
-    while ( atpos > -1)                // while still to replace.. 
-      { fixme = fixme.substring(0,atpos)  
-                + withwhat 
-                + fixme.substring(todo.length + atpos); //replace 
-        atpos = fixme.indexOf(todo);     // find next position (if exists) 
-      };                                // .. end while 
-    return fixme;                       // return altered string 
-  } 
-</script>
-<script language='JavaScript'>
-      function GoThere(yourname) 
-        { 
-        whoyou = yourname.value; 
-        whoyou = Replace(whoyou, ":", "_");     // replace colon, 
-        whoyou = Replace(whoyou, "/", "_");     // and slash      
-        whoyou = Replace(whoyou, " ", "_");     // and spaces. 
-        whoyou = Replace(whoyou, "'", "");      //clip out single quotes 
-        location="index2.html" + "#" + whoyou; 
-        } 
-</script>
-<script language='JavaScript'> 
- <!-- 
- yourname = window.location.hash.substring(1);   //pull out the name 
-   document.write("<div align='center'><h1>");   //write header 
-   document.write("Hello " + yourname);          //write greeting 
-   document.write("</h1></div><hr>");            //finish off 
-   }; 
- //--> 
- </script>
+  <!-- jQuery Libraries Google CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
