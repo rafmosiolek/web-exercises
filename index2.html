@@ -5,11 +5,15 @@
 </head>
 <body>
 
+<div class="output" style="min-height: 150px;">
 
-<h1 align="center">Hello</h1>
+<input type="text"><button>Search</button>
 
+<ul>
 
+</ul>
 
+</div>
 
 
 
@@ -18,14 +22,44 @@
 
 
 <!-- SCRIPTS -->
-<script language='JavaScript'> 
- <!-- 
- yourname = window.location.hash.substring(1);   //pull out the name 
-   document.write("<div align='center'><h1>");   //write header 
-   document.write("Hello " + yourname);          //write greeting 
-   document.write("</h1></div><hr>");            //finish off 
-   }; 
- //--> 
- </script>
+<script type="text/javascript">
+    var list = document.querySelector('.output ul');
+    var searchInput = document.querySelector('.output input');
+    var searchBtn = document.querySelector('.output button');
+
+    list.innerHTML = '';
+
+    var myHistory = [];
+
+    searchBtn.onclick = function() {
+        // we will only allow a term to be entered if the search input isn't empty
+        if (searchInput.value !== '') {
+        // number 1
+    
+        // empty the list so that we don't display duplicate entries
+        // the display is regenerated every time a search term is entered.
+        list.innerHTML = '';
+
+        // loop through the array, and display all the search terms in the list
+            for (var i = 0; i < myHistory.length; i++) {
+                itemText = myHistory[i];
+                var listItem = document.createElement('li');
+                listItem.textContent = itemText;
+                list.appendChild(listItem);
+            }
+
+            // If the array length is 5 or more, remove the oldest search term
+            if (myHistory.length >= 5) {
+             // number 2
+
+             }
+
+            // empty the search input and focus it, ready for the next term to be entered
+        searchInput.value = '';
+        searchInput.focus();
+        }
+    }
+
+</script>
 </body>
 </html>
