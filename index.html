@@ -29,6 +29,7 @@
 var list = document.querySelector('.output ul');
 var totalBox = document.querySelector('.output p');
 var total = 0;
+var itemText = "";
 list.innerHTML = '';
 totalBox.textContent = '';
 
@@ -49,6 +50,7 @@ for(var i = 0; i < products.length; i++) {
   list.appendChild(listItem);
 }
 
+totalBox.style.color="red";
 totalBox.textContent = 'Total: $' + total.toFixed(2);
 // }
 </script>
