@@ -51,30 +51,27 @@
  
 // });
 
-// var list = document.querySelector('.output ul');
-// var totalBox = document.querySelector('.output p');
+var list = document.querySelector('.output ul');
+var totalBox = document.querySelector('.output p');
 var total = 0;
-// list.innerHTML = '';
-// totalBox.textContent = '';
-// number 1
-var products = ['Underpants:6.99', 'Socks:5.99', 'T-shirt:14.99', 'Trousers:31.99', 'Shoes:23.99'];
+list.innerHTML = '';
+totalBox.textContent = '';
 
-for (var i = 0; i <= products.length-1; i++) { 
+var products = ['Underpants:6.99',
+                'Socks:5.99',
+                'T-shirt:14.99',
+                'Trousers:31.99',
+                'Shoes:23.99'];
 
-  var items = products[i].split(":");
-
+for(var i = 0; i < products.length; i++) {
+  var items = products[i].split(':');
   var prices = Number(items[1]);
+  total += price;
+  itemText = items[0] + ' $' + prices;
 
- 
-    total += prices;
-    
-   itemText = items[0] + " $" + prices;
-   console.log(itemText);
-  
-  // var listItem = document.createElement('li');
-  // listItem.textContent = itemText;
-  // list.appendChild(listItem);
+  var listItem = document.createElement('li');
+  listItem.textContent = itemText;
+  list.appendChild(listItem);
 }
 
-
-// totalBox.textContent = 'Total: $' + total.toFixed(2);
+totalBox.textContent = 'Total: $' + total.toFixed(2);
