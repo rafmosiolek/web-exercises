@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>simple calendar exercise</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
 </head>
 <body>
 
@@ -28,7 +29,37 @@
 </div>
 
 <script type="text/javascript">
-    window.alert("Hello world");
+    var select = document.querySelector("select");
+    var list = document.querySelector("ul");
+    var h1 = document.querySelector("h1");
+    var days = 0;
+    var choice = select.value;
+
+    select.onchange = function(){
+        
+
+        if (choice === "February") {
+            days = 28;
+        } else if (choice === "April" || choice === "June" || choice ==="September" || choice === "November") {
+            days = 30;
+        } else {
+            choice = 31;
+        }
+
+        createCalendar(days, choice);
+    }
+
+    function createCalendar(days, choice){
+        list.innerHTML = "";
+        h1.textContent = choice;
+        for (var i = 1; i <= days; i++){
+            var listItem = document.createElement("li");
+            listItem.textContent = i;
+            list.appendChild(listItem);
+        }
+    }
+
+    createCalendar(31, "January");
 </script>
 </body>
 </html>
