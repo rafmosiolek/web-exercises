@@ -13,7 +13,7 @@
 
 <script type="text/javascript">
 	var contacts = [
-		"Marty:071111111"
+		"Marty:071111111",
 		"Chris:071234567",
 		"Ann:077654321",
 		"Robert:07765432",
@@ -22,7 +22,7 @@
 	var input = document.querySelector("input");
 	var btn = document.querySelector("button");
 
-	btn.addEventListener(click, function(){
+	btn.addEventListener("click", function(){
 		var searchName = input.value
 		input.value = "";
 		input.focus();
@@ -37,7 +37,7 @@
 			}
 		}
 	});
-	
+
 </script>
 </body>
 </html>
