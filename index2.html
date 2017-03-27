@@ -1,64 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Exercises Subpage</title>
+    <title>Guests list JS practice</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-<div class="output" style="min-height: 150px;">
+    <div class="output">
+        <p class="admitted"></p>
+        <p class="refused"></p>
+    </div>
 
-<input type="text"><button>Search</button>
-
-<ul>
-
-</ul>
-
-</div>
-
-
-
-
-
-
-
-<!-- SCRIPTS -->
 <script type="text/javascript">
-    var list = document.querySelector('.output ul');
-    var searchInput = document.querySelector('.output input');
-    var searchBtn = document.querySelector('.output button');
-    searchInput.focus();
-    list.innerHTML = '';
+    var people = ["Chris", "Anne", "Colin", "Terry", "Phil", "Lola", "Sam", "Kay", "Bruce"];
+    var admitted = document.querySelector(".admitted");
+    var refused = document.querySelector(".refused");
+    admitted.textContent = "Admit: ";
+    refused.textContent = "Refuse: ";
 
-    var myHistory = [];
+    var i = 0;
 
-    searchBtn.onclick = function() {
-        // we will only allow a term to be entered if the search input isn't empty
-        if (searchInput.value !== '') {
-        // if isn't empty, add current value to the myHistory array
-            myHistory.unshift(searchInput.value);
-        // empty the list so that we don't display duplicate entries
-        // the display is regenerated every time a search term is entered.
-        list.innerHTML = '';
-
-        // loop through the array, and display all the search terms in the list
-            for (var i = 0; i < myHistory.length; i++) {
-                itemText = myHistory[i];
-                var listItem = document.createElement('li');
-                listItem.textContent = itemText;
-                list.appendChild(listItem);
-            }
-
-            // If the array length is 5 or more, remove the oldest search term
-            if (myHistory.length >= 5) {
-                myHistory.pop();
-             }
-
-            // empty the search input and focus it, ready for the next term to be entered
-        searchInput.value = ''; 
-        searchInput.focus();
+    while (i < people.length) {
+        if (people[i] === "Phil" || people[i] === "Lola") {
+            refused.textContent += people[i] + ", ";
+        } else {
+            admitted.textContent += people[i] + ", ";
         }
+        
+    i++;
     }
 
+    refused.textContent = refused.textContent.slice(0,refused.textContent.length-2) + '.';
+    admitted.textContent = admitted.textContent.slice(0,admitted.textContent.length-2) + '.';
+
+
+    
 </script>
 </body>
 </html>
