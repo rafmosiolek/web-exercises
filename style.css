@@ -1,41 +1,4 @@
-/*
-body {
-    width: 100vw;
-    height: auto;
-    background-color: #ecf0f1;
-    font-family: "Roboto";
-
-}
-
 div {
-    width: 200px;
-    height: 200px;
-    border-radius: 2px;
-    display: inline-block;
-    margin: 5px;
+    height: 410px;
+    overflow: auto;
 }
-
-h2 {
-    text-align: center;
-}
-
-
-.red {
-    background-color: #e74c3c;
-}
-
-.blue {
-    background-color: #3498db;
-}
-
-.orange {
-    background-color: #e67e22;
-}
-
-.green {
-    background-color: #2ecc71;
-}
-
-.yellow {
-    background-color: #f1c40f;
-}*/

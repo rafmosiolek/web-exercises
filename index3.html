@@ -1,58 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>simple calendar exercise</title>
-    <link rel="stylesheet" type="text/css" href="style2.css">
+    <title>Web Exercises yet again</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-
-    <div class="output" style="height: 300px;">
-      <label for="theme">Select theme: </label>
-      <select id="theme">
-        <option value="white">White</option>
-        <option value="black">Black</option>
-        <option value="purple">Purple</option>
-        <option value="yellow">Yellow</option>
-        <option value="psychedelic">Psychedelic</option>
-    </select>
-
-    <h1>This is my website</h1>
-    </div>
+<div class="output">
+    
+</div>
 
 
 <script type="text/javascript">
-    var select = document.querySelector("select");
-    var html = document.querySelector(".output");
+    var output = document.querySelector(".output");
+    output.innerHTML = "";
 
-    select.onchange = function(){
-        var choice = select.value;
+    var i = 10;
 
-        switch (choice) {
-            case "white":
-                update("white", "black");
-                break;
-            case "black":
-                update("black", "white");
-                break;
-            case "purple":
-                update("#9b59b6", "white");
-                break;
-            case "yellow":
-                update("#f1c40f", "#c0392b");
-                break;
-            case "psychedelic":
-                update("red", "#1abc9c");
-                break;
-            default:
-                update("#34495e", "#7f8c8d");
+    while (i >= 0) {
+        var para = document.createElement("p");
+        output.appendChild(para);
+
+        if (i === 10) {
+            para.textContent = "Countdown 10";
+        } else {
+            para.textContent = i;
         }
+        if (i === 0){
+            para.textContent = "Blast off!";
+        }
+    
+    i--;
     }
 
-    function update(bgColor, textColor) {
-        html.style.backgroundColor = bgColor;
-        html.style.color = textColor;
-    }
 </script>
 </body>
 </html>
