@@ -1,40 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Guests list JS practice</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <title>Function scope example</title>
 </head>
 <body>
-
-    <div class="output">
-        <p class="admitted"></p>
-        <p class="refused"></p>
-    </div>
-
-<script type="text/javascript">
-    var people = ["Chris", "Anne", "Colin", "Terry", "Phil", "Lola", "Sam", "Kay", "Bruce"];
-    var admitted = document.querySelector(".admitted");
-    var refused = document.querySelector(".refused");
-    admitted.textContent = "Admit: ";
-    refused.textContent = "Refuse: ";
-
-    var i = 0;
-
-    while (i < people.length) {
-        if (people[i] === "Phil" || people[i] === "Lola") {
-            refused.textContent += people[i] + ", ";
-        } else {
-            admitted.textContent += people[i] + ", ";
-        }
-        
-    i++;
+  
+  <script>
+    var x = 1;
+    function a() {
+      var y = 2;
+      output(x);
     }
-
-    refused.textContent = refused.textContent.slice(0,refused.textContent.length-2) + '.';
-    admitted.textContent = admitted.textContent.slice(0,admitted.textContent.length-2) + '.';
-
-
-    
-</script>
+    function b() {
+      var z = 3;
+      output(x);
+    }
+    function output(value) {
+      var para = document.createElement('p');
+      document.body.appendChild(para);
+      para.textContent = 'Value: ' + value;
+    }
+  </script>
 </body>
 </html>
