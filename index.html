@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Web Exercises</title>
+    <meta charset="utf-8">
+    <title>Function message box</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<label for="search">Search by contact name:</label>
-	<input id="search" type="text" name="Contact name">
-	<button>Search!</button>
-
-	<p></p>
-
+    
+    <button>Display message box</button>
 
 <script type="text/javascript">
-	var contacts = [
-		"Marty:071111111",
-		"Chris:071234567",
-		"Ann:077654321",
-		"Robert:07765432",
-		"Greg:071123456"];
-	var para = document.querySelector("p");
-	var input = document.querySelector("input");
-	var btn = document.querySelector("button");
+    function displayMessage(msgText, msgType){
+        var html = document.querySelector("html");  // DOM API function selects the <html> element and store a reference to it in a variable called html
 
-	btn.addEventListener("click", function(){
-		var searchName = input.value
-		input.value = "";
-		input.focus();
+        var panel = document.createElement("div"); // DOM API function creates a <div></div> element...
+        panel.setAttribute("class", "msgBox");      // DOM API function gives div element a class attribute and sets its name for .msgBox
+        html.appendChild(panel);                   // ... inside the <html> element.
 
-		for (var i = 0; i < contacts.length; i++){
-			var splitContact = contacts[i].split(":");
-			if (splitContact[0] === searchName) {
-				para.textContent = splitContact[0] + "'s number is " + splitContact[1] + ".";
-				break;
-			} else {
-				para.textContent = "Contact not found.";
-			}
-		}
-	});
+        var msg = document.createElement("p");  // DOM API function creates a <p></p> element...
+        msg.textContent = msgText;
+        panel.appendChild(msg);                 // ... inside a panel variable, which is a <div.msgBox> element.
 
+        var closeBtn = document.createElement("button");
+        closeBtn.textContent = "x";
+        panel.appendChild(closeBtn);
+
+        closeBtn.onclick = function(){          // event handler; when the button is clicked, it'll remove whole panel from the page
+            panel.parentNode.removeChild(panel);
+        }
+        if (msgType === "warning") {
+            panel.style.backgroundColor = "red";
+        }
+        if (msgType === "chat") {
+            panel.style.backgroundColor = "aqua"
+        }
+    }
+
+    var btn = document.querySelector("button");
+    btn.onclick = function() {
+        displayMessage("Hey man, how's things?", "chat");
+    }
 </script>
 </body>
 </html>
