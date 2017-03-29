@@ -1,19 +1,4 @@
-/*.output * {
-  box-sizing: border-box;
+input {
+  font-size: 2em;
+  margin: 10px 1px 0;
 }
-
-.output ul {
-  padding-left: 0;
-}
-
-.output li {
-  display: block;
-  float: left;
-  width: 25%;
-  border: 2px solid white;
-  padding: 5px;
-  height: 40px;
-  background-color: #2ecc71;
-  color: white;
-}
-*/
