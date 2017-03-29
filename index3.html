@@ -1,38 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Web Exercises yet again</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-
-<div class="output">
-    
-</div>
-
-
-<script type="text/javascript">
-    var output = document.querySelector(".output");
-    output.innerHTML = "";
-
-    var i = 10;
-
-    while (i >= 0) {
-        var para = document.createElement("p");
-        output.appendChild(para);
-
-        if (i === 10) {
-            para.textContent = "Countdown 10";
-        } else {
-            para.textContent = i;
-        }
-        if (i === 0){
-            para.textContent = "Blast off!";
-        }
-    
-    i--;
-    }
-
-</script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Random color example — event handler property</title>
+    <style>
+      button {
+        margin: 10px
+      };
+    </style>
+  </head>
+  <body>
+    <button>Change color</button>
+    <script>
+      var btn = document.querySelector('button');
+      function random(number) {
+        return Math.floor(Math.random()*number);
+      }
+      function bgChange() {
+        var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        document.body.style.backgroundColor = rndCol;
+      }
+      btn.onmouseout = bgChange;    
+    </script>
+  </body>
 </html>
