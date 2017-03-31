@@ -2,15 +2,42 @@
 <html>
 <head>
     <title>16 tiles</title>
-<style type="text/css">
-    div {
-        background-color: #9b59b6;
-        height: 100px;
-        width: 25%;
-        float: left;
-    }
-</style>
+    <style type="text/css">
+        div {
+            background-color: #8e44ad;
+            height: 100px;
+            width: 25%;
+            float: left;
+        }
+    </style>
 </head>
 <body>
+<script type="text/javascript">
+
+    for (var i = 1; i <= 16; i++){
+        var myDiv = document.createElement("div");
+        document.body.appendChild(myDiv);
+    }
+
+    function random(number){
+        return Math.floor(Math.random() * number);
+    }
+
+    function bgChange(){
+        var rndmClr = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+        return rndmClr;
+    }
+
+    var divs = document.querySelectorAll("div");
+
+    for (var i = 0; i < divs.length; i++) {
+        divs[i].onclick = function(e){
+            e.target.style.backgroundColor = bgChange();
+        }
+    }
+
+
+
+</script>
 </body>
 </html>
