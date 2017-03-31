@@ -23,7 +23,22 @@
 
 
 <script type="text/javascript">
-    
+
+    var form = document.querySelector("form");
+    var fname = document.getElementById('fname');
+    var lname = document.getElementById('lname');
+    var submit = document.getElementById("submit");
+    var para = document.querySelector("p");
+
+    form.onsubmit = function(e){
+        if (fname.value === "" || lname.value === ""){
+            e.preventDefault(); // Cancels the event if it is cancelable, without stopping further propagation of the event.
+            para.textContent = "You need to fill in the form completely!"
+        }
+    }
+
+    /* Example shows how incomplete text input can be stopped from reaching the input field with built in preventDefault() function.
+        Obviously whole demonstration is not advanced and this is still pretty weak form of validation */
 </script>
 </body>
 </html>
