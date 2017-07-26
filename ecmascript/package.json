@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "*** ecmascript practice",
   "main": "index.js",
+  "scripts": "babel --version",
   "dependencies": {
     "babel-cli": "^6.24.1"
   },
